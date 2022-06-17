@@ -13,7 +13,7 @@ import Animated, {
 import { usePuzzleContext } from './PuzzleGameContext';
 import { TileMask } from './TileMask';
 import { Point, TileObject } from './types';
-import { getDistance } from './utils';
+import { getDistance, randomIntFromInterval } from './utils';
 
 export type ITileProps = {
   tile: TileObject;
@@ -61,11 +61,13 @@ const Tile: React.FC<ITileProps> = ({ tile }) => {
 
   const dropTile = () => {
     setLoaded(true);
+    const delay = randomIntFromInterval(50, 600);
+
     setTimeout(() => {
       // translationX.value = initialX;
       translationY.value = withTiming(intialY, { duration: 650 });
       perspective.value = withTiming(1000, { duration: 650 });
-    }, 50 * tile.id);
+    }, delay);
   };
   //randomIntFromInterval(1, state.tiles.length)
   const setIntialPosition = () => {
