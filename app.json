@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "expo-starter-template",
-    "slug": "expo-starter-template",
+    "name": "react-native-puzzle-game",
+    "slug": "react-native-puzzle-game",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -15,15 +15,19 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.eliaschris.puzzlegame"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.eliaschris.puzzlegame"
     },
     "web": {
       "favicon": "./assets/favicon.png"
