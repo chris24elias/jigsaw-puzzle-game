@@ -4,7 +4,6 @@ import Carousel from 'react-native-reanimated-carousel';
 import { usePuzzleContext } from './PuzzleGameContext';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { interpolate } from 'react-native-reanimated';
-import { Box } from 'native-base';
 
 export type IOptionsCarouselProps = {
   onSnapToItem: (numTiles: number) => void;

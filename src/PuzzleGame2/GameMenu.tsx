@@ -14,7 +14,7 @@ const GameMenu: React.FC<IGameMenuProps> = () => {
   const { screenHeight, screenWidth, loadGame, state, setNumTiles } = usePuzzleContext();
 
   // const imgSize = Device.isPhone ? screenWidth * 0.8 : screenWidth * 0.3;
-  const imgSize = screenWidth * 0.8;
+  const imgSize = 250;
 
   const y = useSharedValue(0);
   const opacity = useSharedValue(1);
@@ -77,7 +77,8 @@ const GameMenu: React.FC<IGameMenuProps> = () => {
           <Box flex={1}>
             <Image
               source={{ uri: state.image }}
-              style={{ height: imgSize, width: imgSize, alignSelf: 'center', borderRadius: 12 }}
+              resizeMode="contain"
+              style={{ height: '100%', width: '100%', alignSelf: 'center', borderRadius: 12 }}
             />
           </Box>
 
