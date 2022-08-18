@@ -4,7 +4,7 @@ import { BlurView } from 'expo-blur';
 import { OptionsCarousel } from './OptionsCarousel';
 import { usePuzzleContext } from './PuzzleGameContext';
 import Animated, { useAnimatedStyle, useSharedValue, withTiming } from 'react-native-reanimated';
-import { Button, Text } from 'native-base';
+import { Box, Button, Text } from 'native-base';
 
 export type IGameMenuProps = {};
 
@@ -65,7 +65,7 @@ const GameMenu: React.FC<IGameMenuProps> = () => {
             shadowOffset: { width: 2, height: 2 },
             shadowOpacity: 1,
             shadowRadius: 5,
-            padding: 25,
+            // padding: 25,
             zIndex: 1000000000,
             // justifyContent: 'center',
             // alignItems: 'center'
@@ -73,22 +73,28 @@ const GameMenu: React.FC<IGameMenuProps> = () => {
           animatedStyle,
         ]}
       >
-        <Image
-          source={{ uri: state.image }}
-          style={{ height: imgSize, width: imgSize, alignSelf: 'center', borderRadius: 12 }}
-        />
+        <Box flex={1} overflow="hidden" p="6">
+          <Box flex={1}>
+            <Image
+              source={{ uri: state.image }}
+              style={{ height: imgSize, width: imgSize, alignSelf: 'center', borderRadius: 12 }}
+            />
+          </Box>
 
-        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-          <View style={{ marginVertical: 20 }}>
-            <Text style={{ color: 'white', fontSize: 20 }}>Select Number of Tiles</Text>
+          <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+            <View style={{ marginVertical: 20 }}>
+              <Text style={{ color: 'white', fontSize: 20 }}>Select Number of Tiles</Text>
+            </View>
+
+            <Box flex={0.5} mb="4">
+              <OptionsCarousel onSnapToItem={(num) => setNumTiles(num)} />
+            </Box>
+
+            <Button onPress={loadGame}>
+              <Text>Start</Text>
+            </Button>
           </View>
-
-          <OptionsCarousel onSnapToItem={(num) => setNumTiles(num)} />
-
-          <Button onPress={loadGame}>
-            <Text>Start</Text>
-          </Button>
-        </View>
+        </Box>
       </Animated.View>
     </>
   );

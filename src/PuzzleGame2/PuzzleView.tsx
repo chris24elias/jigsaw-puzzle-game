@@ -6,6 +6,8 @@ import { Tile } from './Tile';
 import { GameMenu } from './GameMenu';
 import { GameCelebration } from './GameCelebration';
 import Animated, { useAnimatedStyle, useSharedValue, withTiming } from 'react-native-reanimated';
+import { Icon } from 'native-base';
+import FontAwesome from '@expo/vector-icons/FontAwesome';
 
 export type IPuzzleViewProps = {};
 
@@ -121,13 +123,32 @@ const PuzzleView: React.FC<IPuzzleViewProps> = () => {
           animatedBackgroundStyle,
         ]}
       />
+      <Pressable
+        style={{
+          position: 'absolute',
+          top: 50,
+          left: 15,
+          zIndex: 100,
+        }}
+        onPress={() => goBack()}
+      >
+        {/* <Text style={{ color: 'white', fontSize: 22, fontWeight: 'bold' }}>BACK</Text> */}
+        <Icon name="chevron-left" as={FontAwesome} size={6} color="white" />
+      </Pressable>
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <View style={{ position: 'absolute', left: 50, top: 50 }}>
-          <Pressable onPress={() => goBack()}>
-            <Text style={{ color: 'white', fontSize: 22, fontWeight: 'bold' }}>BACK</Text>
-          </Pressable>
+        <View
+          style={{
+            position: 'absolute',
+            flexDirection: 'row',
+            right: 15,
+            top: 50,
+            zIndex: 100000000,
+          }}
+        >
           <Pressable onPress={solve}>
-            <Text style={{ color: 'white', fontSize: 22, fontWeight: 'bold' }}>SOLVE</Text>
+            <Text style={{ color: 'white', fontSize: 22, fontWeight: 'bold', marginRight: 15 }}>
+              SOLVE
+            </Text>
           </Pressable>
           <Pressable onPress={reset}>
             <Text style={{ color: 'white', fontSize: 22, fontWeight: 'bold' }}>RESET</Text>

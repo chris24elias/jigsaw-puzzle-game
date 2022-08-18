@@ -1,8 +1,7 @@
 import CachedImage from '@/components/CachedImage';
 import { navigate } from '@/navigation/utils';
-import { Box } from 'native-base';
+import { Box, Pressable } from 'native-base';
 import React from 'react';
-import { Pressable } from 'react-native';
 import { FlatGrid } from 'react-native-super-grid';
 
 export type IPuzzleListProps = {};
@@ -70,24 +69,36 @@ const PUZZLE_DATA = [
 ];
 
 const PuzzleList: React.FC<IPuzzleListProps> = () => {
-  const size = 200;
+  const size = 150;
 
   const renderItem = ({ item }: any) => {
     return (
       <Pressable
+        shadow="4"
         style={{
           height: size,
           width: size,
+          alignSelf: 'center',
+          marginTop: 10,
         }}
         onPress={() => navigate('Game', { puzzle: item })}
       >
-        <CachedImage source={{ uri: item.image }} style={{ height: '100%', width: '100%' }} />
+        <CachedImage
+          source={{ uri: item.image }}
+          style={{ height: '100%', width: '100%', borderRadius: 12 }}
+        />
       </Pressable>
     );
   };
 
   return (
-    <Box flex={1}>
+    <Box
+      pt="8"
+      flex={1}
+      style={{
+        backgroundColor: 'rgba(47, 53, 66, 0.9)',
+      }}
+    >
       <FlatGrid
         // spacing={10}
         // itemDimension={itemHeight}
