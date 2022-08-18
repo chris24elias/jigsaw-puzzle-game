@@ -1,3 +1,4 @@
+import { IS_WEB } from '@/utils/Constants';
 import React, { useEffect, useState } from 'react';
 import { Dimensions } from 'react-native';
 // import { Text, View } from 'react-native';
@@ -199,7 +200,7 @@ const Tile: React.FC<ITileProps> = ({ tile }) => {
             zIndex: done ? -10 : zIndex,
           },
           { height: state.tileSize, width: state.tileSize },
-          done ? {} : shadow,
+          done ? {} : IS_WEB ? {} : shadow,
           animatedStyles,
         ]}
       >
