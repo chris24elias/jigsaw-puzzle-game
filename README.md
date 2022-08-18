@@ -1,27 +1,26 @@
-## Includes
+## Jigsaw Puzzle Game
 
-- React-native 0.68.2
-- React-Navigation v6
-- Axios and React Query for REST APIs
-- Localization with react-i18next
-- Pre-installed with Reanimated 2 and Gesture-Handler
-- React Native SVG
-- Native-Base for UI and theming
-- Husky and ESlint
-- Reactotron for debugging
+### Simple Jigsaw Puzzle Game built using React Native and Expo.
 
-## Getting Started
+- Built using Expo, react-native-reanimated, and react-native-gesture-handler, react-native-svg
 
-**Step 1:** Clone and Install
+### Running the app
 
 ```sh
+$ git clone https://https://github.com/chris24elias/jigsaw-puzzle-game.git
 
-$ git clone https://github.com/chris24elias/react-native-expo-template-2022.git
-
-$ cd react-native-expo-template-2022
-
-$ rm -rf ./.git
+$ cd jigsaw-puzzle-game
 
 $ yarn
 
+ios:
+
+$ yarn ios
 ```
+
+# Demo
+
+<p float="left">
+  <img src="screenshots/1.gif" width="49%" />
+  <img src="screenshots/2.gif" width="49%" /> 
+</p>
