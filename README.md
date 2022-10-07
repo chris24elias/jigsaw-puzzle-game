@@ -4,6 +4,8 @@
 
 - Built using Expo, react-native-reanimated, and react-native-gesture-handler, react-native-svg
 
+<img src="screenshots/puzzle-game.jpeg"  />
+
 ### Running the app
 
 ```sh
